@@ -53,6 +53,14 @@ module RailsAdmin
         @adapter = :mongoid
         require 'rails_admin/adapters/mongoid'
         extend Adapters::Mongoid
+      elsif model.ancestors.map(&:to_s).include?('HydraAPI::HydraModel')
+        @adapter = :hydra
+        model.class_eval do
+          require 'rails_admin/adapters/hydra/extension'
+          include RailsAdmin::Adapters::Hydra::Extension
+        end
+        require 'rails_admin/adapters/hydra'
+        extend Adapters::Hydra
       end
     end
 
