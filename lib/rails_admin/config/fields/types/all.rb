@@ -24,4 +24,6 @@ require 'rails_admin/config/fields/types/time'
 require 'rails_admin/config/fields/types/timestamp'
 require 'rails_admin/config/fields/types/color'
 
+# Hydra API related
 require 'rails_admin/config/fields/types/hydra_attachment'
+require 'rails_admin/config/fields/types/date_time'
