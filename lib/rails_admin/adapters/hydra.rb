@@ -17,8 +17,7 @@ module RailsAdmin
       end
 
       def scoped
-        # There is no scope
-        # model.scoped
+        model.scoped
       end
 
       def associations
